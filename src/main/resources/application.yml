@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: my-spring-ai
+  ai:
+    google:
+      genai:
+        api-key: ${GOOGLE_API_KEY:YOUR_VALID_KEY}
+        chat:
+          options:
+            model: gemini-2.5-flash-lite
+
+server:
+  port: 8080
+
+# Trace the cache hit and miss.
+logging:
+  level:
+    org:
+      springframework:
+        cache: trace

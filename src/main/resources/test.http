@@ -1,0 +1,1 @@
+GET http://localhost:8080/api/chats?prompt=what is the captical of Nepal
