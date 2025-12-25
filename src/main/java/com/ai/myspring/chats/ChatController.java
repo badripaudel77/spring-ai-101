@@ -21,4 +21,9 @@ public class ChatController {
         return service.getAiResponse(prompt);
     }
 
+    @GetMapping("/population")
+    public String getPopulationQueryResult(@RequestParam("prompt") String prompt) {
+        return service.getPopulationQuery(prompt);
+    }
+
 }

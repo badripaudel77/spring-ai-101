@@ -30,12 +30,28 @@ public class ChatService {
     }
 
     // To avoid too many calls using key, get from the cache if it is the same call.
-    @Cacheable(value = "ai-chat-response", key = "#prompt")
+    @Cacheable(value = "ai-chat-all-questions", key = "#prompt")
     public ChatResponse getAiResponse(String prompt) {
         return client
                 .prompt()
                 .user(prompt)
                 .call()
                 .chatResponse();
+    }
+
+    // System message, to restrict certain types of questions.
+    @Cacheable(value = "ai-chat-specific-questions", key = "#prompt")
+    public String getPopulationQuery(String prompt) {
+        String instruction = """
+                    You only have to answer related to population of the world including any country, continent. 
+                    Any query and question besides this should be discarded. 
+                    If you're asked anything else, just response : "You can't ask question other than the ones related to population"
+                """;
+        return client
+                .prompt()
+                .user(prompt)
+                .system(instruction)
+                .call()
+                .content();
     }
 }
