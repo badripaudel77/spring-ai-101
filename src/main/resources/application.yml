@@ -7,9 +7,13 @@ spring:
         api-key: ${GOOGLE_API_KEY:YOUR_VALID_KEY}
         chat:
           options:
-            model: gemini-2.5-flash-lite
-#            max-tokens: 5000
+            #model: gemini-2.5-flash-lite
+            model: gemini-2.5-flash
+            max-tokens: 5000
             max-output-tokens: 10000
+  servlet:
+    multipart:
+      max-file-size: 3MB
 
 server:
   port: 8080
