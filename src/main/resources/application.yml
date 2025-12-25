@@ -8,7 +8,7 @@ spring:
         chat:
           options:
             model: gemini-2.5-flash-lite
-            max-tokens: 5000
+#            max-tokens: 5000
             max-output-tokens: 10000
 
 server:
