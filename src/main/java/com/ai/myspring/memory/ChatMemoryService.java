@@ -13,7 +13,7 @@ public class ChatMemoryService {
 
     public ChatMemoryService(ChatClient.Builder chatClient, ChatMemory chatMemory) {
         this.chatClient = chatClient
-                .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory).build()) // In Memory ChatMemory for conversation.
+                .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory).build()) // In Memory ChatMemory for conversation context.
                 .build();
     }
 

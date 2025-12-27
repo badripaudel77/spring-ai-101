@@ -11,6 +11,18 @@ spring:
             model: gemini-2.5-flash
             max-tokens: 5000
             max-output-tokens: 10000
+        embedding:
+          project-id: gen-lang-client-0474182412
+#          project-id: gen-lang-client-0293244803
+          location: us-central1
+          text:
+            options:
+              model: text-embedding-004
+
+    vectorstore:
+      in-memory:
+        enabled: true
+
   servlet:
     multipart:
       max-file-size: 3MB
