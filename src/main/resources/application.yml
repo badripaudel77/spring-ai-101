@@ -7,8 +7,8 @@ spring:
         api-key: ${GOOGLE_API_KEY:YOUR_VALID_KEY}
         chat:
           options:
-            #model: gemini-2.5-flash-lite
-            model: gemini-2.5-flash
+            model: gemini-2.5-flash-lite
+#            model: gemini-2.5-flash
             max-tokens: 5000
             max-output-tokens: 10000
         embedding:
