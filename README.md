@@ -1,5 +1,4 @@
-**About:**
-Spring AI 101, Spring AI all concepts. Integrating AI and Java using LLM and Spring AI.
+**About:** Spring AI 101, Spring AI all concepts. Integrating AI and Java using LLM and Spring AI.
 ---
 
 Spring AI is an application framework for AI engineering. 
