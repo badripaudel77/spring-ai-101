@@ -17,6 +17,10 @@ public class ExchangeService {
     public ExchangeRateResponse exchange(String prompt) {
         return client
                 .prompt(prompt)
+                .system("You job is to convert currency from one to the other. You will be " +
+                        "given a prompt with country name or currency name or just short code for currency" +
+                        " for example, USD for US Dollars, NPR for Nepali rupee. Just analyze the prompt and give the best " +
+                        "matching answer without any flaws.")
                 .tools(exchangeTools)
                 .call()
                 .entity(ExchangeRateResponse.class);
